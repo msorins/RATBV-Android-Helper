@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" href="css/jquerym.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery2.js"></script>
+	    <!-- <link href='themes/Yup.css' rel='stylesheet' /> -->
+		<script type="text/javascript" charset="utf-8" src="js/SQLitePlugin.js"></script>
+		<link rel="stylesheet" href="css/autocomplete.css">
+		  <script src="js/jq.js"></script>
+		  <script src="js/jq2.js"></script>
+        <title>RATBV Helper</title>
+    </head>
+	<style>
+	.fundal
+	{
+		background-image: url("img/bg.png");
+		background-size:   cover;                 
+		background-repeat: no-repeat;
+		background-position: center center;   
+	}
+	.titlu{
+		 color: #ffffff;
+	}
+	</style>
+    <body style="min-height:1000px;" >
+
+		<!-- ACASA -->
+		<div  style="margin-top:-5px;" data-theme="c" data-role="page" id="acasa">
+		
+			<!-- Navbar -->
+			<div  style="height:60px; border:0px;" class="fundal" data-role="header" style="overflow:hidden;" role="banner" class="ui-header ui-bar-inherit">
+				<h1  class="ui-title titlu" role="heading" aria-level="1">RATBV Helper</h1>
+			</div><!-- /header -->
+			
+			
+			<div role="main" class="ui-content">
+				
+				<div style="margin-top:30px; background-color:white; margin-top:35%" id='calendar'></div>
+				<div id="ui-body-test" class="ui-body ui-body-a ui-corner-all" style="margin-bottom:1em; margin-top:45px;">
+	
+				<h4> Introduceti statia de plecare </h4>
+				<input type="text"  id="nume_statie" name="nume_statie" value="">
+				
+				<h4> Introduceti statia de sosire </h4>
+				<input type="text" id="nume_destinatie" name="nume_destinatie" value="">
+				</div>
+				
+				<a style="margin-left:40%; height:70px; width:70px;" href="#" class="ui-btn ui-icon-action ui-btn-icon-notext ui-corner-all"></a>
+			</div><!-- /content -->
+			
+		</div>
+
+		
+		<!-- Setari -->
+		<div style="margin-top:-2px;" data-theme="c" data-role="page" id="setari">
+		
+			<!-- Navbar -->
+			<div data-role="header" style="overflow:hidden;" role="banner" class="ui-header ui-bar-inherit">
+				<h1 class="ui-title" role="heading" aria-level="1">RATBV Helper</h1>
+					<a href="#" data-icon="back" class="ui-btn-right ui-link ui-btn ui-icon-back ui-btn-icon-left ui-shadow ui-corner-all" data-role="button" role="button">Setari</a>
+			</div><!-- /header -->
+			
+			
+			<div role="main" class="ui-content">
+			
+				<div style="width:80%; margin:auto; margin-top:20px;">
+				<div id="ui-body-test" class="ui-body ui-body-a ui-corner-all" style="margin-bottom:1em; margin-top:45px;">
+					<h4> Setari </h4>
+					<hr>
+					<!--
+					<fieldset data-role="controlgroup" data-type="horizontal" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all">Tema:<div class="ui-controlgroup-controls ">
+					
+					
+					<div style="margin-left:10px;" class="ui-radio"><label for="a" class="ui-btn ui-corner-all ui-btn-inherit ui-first-child ui-btn-active ui-radio-on">Deschisa</label><input type="radio" name="theme" id="a" checked="" data-cacheval="false"></div>
+					
+					<div class="ui-radio"><label for="b" class="ui-btn ui-corner-all ui-btn-inherit ui-last-child ui-radio-off">Inchisa</label><input type="radio" name="theme" id="b" data-cacheval="true"></div>
+				</div></fieldset>
+				   -->
+				<br>
+				<fieldset data-role="controlgroup" data-type="horizontal" class="ui-controlgroup ui-controlgroup-horizontal ui-corner-all">
+		   <span style=""> Sterge datele aplicatiei: </span>
+			<div data-demo-html="true">
+			
+				<a style="margin-top:5px; margin-left:10px;" href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-a" aria-haspopup="true" aria-owns="popupDialog" aria-expanded="false">Click</a>
+
+				<div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;" class="ui-popup ui-body-a ui-overlay-shadow ui-corner-all">
+					<div data-role="header" data-theme="a" role="banner" class="ui-header ui-bar-a">
+					<h1 class="ui-title" role="heading" aria-level="1">Sterge datele aplicateii</h1>
+					</div>
+					<div role="main" class="ui-content">
+						<h3 class="ui-title">Esti sigur ca vrei sa faci acest lucru ?</h3>
+					<p>Aceasta actiune este ireversibila.</p>
+						<a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back">Anuleaza</a>
+						<a href="#" onclick="sterge()" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-a" data-rel="back" data-transition="flow">Continua</a>
+					</div>
+				</div>
+			</div>
+			</fieldset>
+				</div>
+				</div>
+		
+			</div><!-- /content -->
+
+		</div><!-- /page -->
+		
+    <script type="text/javascript" src="cordova.js"></script>
+	<style>
+	 .fc-title
+	 {
+		color:white;
+		font-weight: normal;
+	}
+	</style>
+   <div onload="init();" id="stage" class="theme">
+   </div>
+   <script>
+   $(document).ready(function () {
+	$(function() {
+
+		$( "#nume_statie" ).autocomplete(
+		{
+			 minlength:2,
+			 source:'https://ironcoders.com/ratbv/scripts/statii_lista.php',
+			 select: function(event, ui) {
+					$('#nume_statie').val(ui.item.label);
+				}
+		})
+
+	});
+	
+	$(function() {
+
+		$( "#nume_destinatie" ).autocomplete(
+		{
+			 minlength:2,
+			 source:'https://ironcoders.com/ratbv/scripts/statii_lista.php',
+			 select: function(event, ui) {
+					$('#nume_destinatie').val(ui.item.label);
+				}
+		})
+
+	});
+	});
+</script>
+</html>
